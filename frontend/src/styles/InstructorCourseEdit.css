@@ -1,0 +1,243 @@
+.edit-course-page {
+    min-height: calc(100vh - 70px);
+    padding: 50px 20px;
+    background: var(--background);
+}
+
+.edit-course-container {
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+/* Header */
+
+.edit-course-header {
+    margin-bottom: 30px;
+}
+
+.edit-course-eyebrow {
+    display: inline-block;
+    margin-bottom: 8px;
+    color: var(--primary);
+    font-size: 13px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+}
+
+.edit-course-header h1 {
+    margin: 0 0 10px;
+    color: var(--text-primary);
+    font-size: 34px;
+}
+
+.edit-course-header p {
+    max-width: 650px;
+    margin: 0;
+    color: var(--text-secondary);
+    font-size: 15px;
+    line-height: 1.6;
+}
+
+/* Card */
+
+.edit-course-card {
+    padding: 32px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-xl);
+    box-shadow: var(--shadow-md);
+}
+
+.edit-course-form {
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+}
+
+/* Form */
+
+.edit-form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.edit-form-group label {
+    color: var(--text-primary);
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.edit-form-group input,
+.edit-form-group textarea,
+.edit-form-group select {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 13px 14px;
+    border: 1px solid var(--border);
+    border-radius: var(--radius-md);
+    background: var(--surface);
+    color: var(--text-primary);
+    font-family: var(--font-family);
+    font-size: 14px;
+    outline: none;
+    transition: var(--transition);
+}
+
+.edit-form-group textarea {
+    resize: vertical;
+}
+
+.edit-form-group input::placeholder,
+.edit-form-group textarea::placeholder {
+    color: var(--text-muted);
+}
+
+.edit-form-group input:focus,
+.edit-form-group textarea:focus,
+.edit-form-group select:focus {
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px var(--primary-light);
+}
+
+.edit-form-group select {
+    cursor: pointer;
+}
+
+.edit-form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 16px;
+}
+
+/* Messages */
+
+.edit-course-success,
+.edit-course-error {
+    margin-bottom: 20px;
+    padding: 14px 16px;
+    border-radius: var(--radius-md);
+    font-size: 14px;
+}
+
+.edit-course-success {
+    border: 1px solid #bbf7d0;
+    background: var(--success-light);
+    color: var(--success);
+}
+
+.edit-course-error {
+    border: 1px solid #fecaca;
+    background: var(--danger-light);
+    color: var(--danger);
+}
+
+/* Actions */
+
+.edit-course-actions {
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+    margin-top: 5px;
+    padding-top: 24px;
+    border-top: 1px solid var(--border-light);
+}
+
+.edit-back-button,
+.edit-save-button {
+    min-height: 44px;
+    padding: 11px 20px;
+    border-radius: var(--radius-md);
+    font-family: var(--font-family);
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.edit-back-button {
+    border: 1px solid var(--border);
+    background: var(--surface);
+    color: var(--text-primary);
+}
+
+.edit-back-button:hover {
+    border-color: var(--primary);
+    background: var(--primary-light);
+    color: var(--primary);
+}
+
+.edit-save-button {
+    border: none;
+    background: var(--primary);
+    color: white;
+}
+
+.edit-save-button:hover {
+    background: var(--primary-dark);
+    transform: translateY(-1px);
+}
+
+/* Loading */
+
+.edit-course-loading {
+    min-height: 60vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-secondary);
+}
+
+.edit-course-loading p {
+    margin-top: 14px;
+    font-size: 14px;
+}
+
+.edit-loading-spinner {
+    width: 34px;
+    height: 34px;
+    border: 3px solid var(--border);
+    border-top-color: var(--primary);
+    border-radius: 50%;
+    animation: edit-course-spin 0.8s linear infinite;
+}
+
+@keyframes edit-course-spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* Responsive */
+
+@media (max-width: 750px) {
+    .edit-form-row {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 600px) {
+    .edit-course-page {
+        padding: 30px 16px;
+    }
+
+    .edit-course-header h1 {
+        font-size: 28px;
+    }
+
+    .edit-course-card {
+        padding: 22px;
+    }
+
+    .edit-course-actions {
+        flex-direction: column-reverse;
+    }
+
+    .edit-back-button,
+    .edit-save-button {
+        width: 100%;
+    }
+}
